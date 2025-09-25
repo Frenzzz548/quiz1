@@ -1,0 +1,302 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #212529;
+}
+
+/* ====== Navbar Styling Transparan ====== */
+.navbar {
+  background-color: rgba(1, 11, 21, 0.8) !important; /* abu-abu transparan */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  backdrop-filter: blur(5px); /* efek blur di belakang navbar */
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.navbar .navbar-brand {
+  color: white !important;
+}
+
+/* ====== Background body dengan blur ====== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../img/back-trenggalek.jpeg') center center/cover no-repeat;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+
+/* ====== Main content ====== */
+main {
+  flex: 1 0 auto;
+  padding-top: 0.5rem;
+}
+
+/* ====== Card Homepage Transparan ====== */
+main .card {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* transparan gelap */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== Tombol Hero Transparan ====== */
+.hero .btn-light {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: white !important;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero .btn-light:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+
+/* ====== Hero Text Timbul ====== */
+.hero h1 {
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.6),
+    4px 4px 6px rgba(0,0,0,0.4),
+    6px 6px 8px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.6),
+    4px 4px 6px rgba(0,0,0,0.4);
+}
+
+/* ====== Footer ====== */
+footer {
+  font-size: .9rem;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0,0,0,0.6);
+  color: #f8f9fa;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  position: relative;
+  padding: 1rem 0; /* jarak dikurangi */
+  color: white;
+  text-align: center;
+  background: url('../../img/next-trenggalek.jpg') center 80%/cover no-repeat;
+  background-attachment: local;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* ====== Hero text timbul ====== */
+.hero h1 {
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.6),
+    4px 4px 6px rgba(0,0,0,0.4),
+    6px 6px 8px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.6),
+    4px 4px 6px rgba(0,0,0,0.4);
+}
+
+/* ====== Fullscreen background image ====== */
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: -1;
+  background-color: #000;
+}
+
+/* ====== Card hover ====== */
+.card {
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* ====== Page Specific ====== */
+.profile-page main {
+  min-height: auto;
+}
+
+.hometown-page main {
+  min-height: 100vh;
+}
+
+.tourist-page main {
+  min-height: auto;
+}
+
+/* ====== Headings ====== */
+.profile-page h2,
+.hometown-page h2,
+.food-page h2,
+.tourist-page h2 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ====== Food Page: Carousel ====== */
+.carousel {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.carousel-inner {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-indicators {
+  bottom: 10px;
+}
+
+.carousel-indicators li {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%, 100%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.carousel-caption {
+  bottom: 50%;
+  transform: translateY(50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+}
+
+.food-page .card-title {
+  text-align: center;
+  color: yellow;
+}
+
+.food-page .card-text {
+  font-size: smaller;
+}
+
+/* ====== Tourist Page: Accordion ====== */
+.tourist-page .accordion-item {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.tourist-page .accordion-button {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.tourist-page .accordion-button:not(.collapsed) {
+  color: rgb(211, 202, 19);
+}
+
+.tourist-page .accordion-body {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  line-height: 1.6;
+  font-size: 0.75rem;
+}
